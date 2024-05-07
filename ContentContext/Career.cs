@@ -6,7 +6,7 @@ public class Career : Content
 
     public int Total => CareerItems.Count;
 
-    public Career()
+    public Career(string title, string url): base(title, url)
     {
         CareerItems = new List<CareerItem>();
     }
