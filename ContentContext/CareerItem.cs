@@ -2,11 +2,15 @@ namespace Balta.ContentContext;
 
 public class CareerItem
 {
-    public CareerItem(int id, string title, string description)
+    public CareerItem(int id, string title, string description, Course course)
     {
         Id = id;
         Title = title;
         Description = description;
+
+        if (course == null)
+            throw new Exception("Course can't be nullable");
+        Course = course;
     }
 
     public int Id { get; set; }

@@ -18,7 +18,7 @@ foreach (var item in course.Modules)
 #region ModelingCareer
 
 var career = new Career(string.Empty, string.Empty);
-career.CareerItems.Add(new CareerItem(0, string.Empty, string.Empty));
+career.CareerItems.Add(new CareerItem(0, string.Empty, string.Empty, new Course("cooking", string.Empty)));
 Console.WriteLine($"Total: {career.Total}");
 #endregion
 
@@ -49,7 +49,7 @@ var careers = new List<Career>();
 var specialistCareer = new Career("Specialist .Net", string.Empty);
 careers.Add(specialistCareer);
 
-var careerItem = new CareerItem(1, "Starting here", "description career item");
+var careerItem = new CareerItem(1, "Starting here", "description career item", courseOOP);
 
 specialistCareer.CareerItems.Add(careerItem);
 
@@ -64,6 +64,8 @@ foreach (var car in careers)
         Console.WriteLine($"Id: {item.Id}");
         Console.WriteLine($"Title: {item.Title}");
         Console.WriteLine($"Description: {item.Description}");
+        Console.WriteLine($"Title Course: {item.Course.Title}");
+        Console.WriteLine($"Level Course: {item.Course.Level}");
     }
 }
 
