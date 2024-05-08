@@ -1,6 +1,7 @@
 ﻿#region Heritage
 using Balta.ContentContext;
 using Balta.NotificationContext;
+using Balta.SubscriptionContext;
 
 var course = new Course(string.Empty, string.Empty);
 course.Title = string.Empty;
@@ -78,5 +79,15 @@ foreach (var car in careers)
         Console.WriteLine($"Level Course: {item.Course?.Level}");
     }
 }
+
+#endregion
+
+#region Subscription
+
+var payPalSubscription = new PaypalSubscription();
+var student = new Student();
+
+student.Subscriptions.Add(payPalSubscription);
+
 
 #endregion
