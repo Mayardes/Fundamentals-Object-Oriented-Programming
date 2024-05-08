@@ -1,6 +1,8 @@
+using Balta.NotificationContext;
+
 namespace Balta.ContentContext;
 
-public class CareerItem
+public class CareerItem : Base
 {
     public CareerItem(int id, string title, string description, Course course)
     {
@@ -9,7 +11,7 @@ public class CareerItem
         Description = description;
 
         if (course == null)
-            throw new Exception("Course can't be nullable");
+            AddNotification(new Notification("Course", "Invalid course!"));
         Course = course;
     }
 
